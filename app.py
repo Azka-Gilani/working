@@ -75,12 +75,12 @@ def makeWebhookResult(data):
                "template_type": "generic",
                "elements": [{
                "title": row1_title,
-               "subtitle": row1_subtitle,
-               "item_url": row1_web_url,               
+               "subtitle": row1_location,
+               "item_url": "www.google.com",               
                "image_url": "https://fazendanatureza.com/bot/house-0.png" ,
                 "buttons": [{
                 "type": "web_url",
-                "url": row1_web_url,
+                "url": "www.google.com",
                 "title": "Open Web URL"
             }, 
                     {
@@ -91,12 +91,12 @@ def makeWebhookResult(data):
           }, 
                    {
                 "title": row2_title,
-                "subtitle": row2_subtitle,
-                "item_url": row2_web_url,               
+                "subtitle": row2_location,
+                "item_url": "www.google.com",               
                 "image_url": "https://fazendanatureza.com/bot/house2.png",
                 "buttons": [{
                 "type": "web_url",
-                "url": row2_web_url,
+                "url": "www.google.com",
                 "title": "Open Web URL"
             },
                     {
