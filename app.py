@@ -76,11 +76,11 @@ def makeWebhookResult(data):
                "elements": [{
                "title": row1_title,
                "subtitle": row1_location,
-               "item_url": "www.google.com",               
+               "item_url": row1_price,               
                "image_url": "https://fazendanatureza.com/bot/house-0.png" ,
                 "buttons": [{
                 "type": "web_url",
-                "url": "www.google.com",
+                "url": "http://www.aarz.pk/search?purpose=Sell&postedby=homepage&property_type=&locAreaOrKeyword="+row1_location,
                 "title": "Open Web URL"
             }, 
                     {
@@ -92,11 +92,11 @@ def makeWebhookResult(data):
                    {
                 "title": row2_title,
                 "subtitle": row2_location,
-                "item_url": "www.google.com",               
+                "item_url": row2_price,               
                 "image_url": "https://fazendanatureza.com/bot/house2.png",
                 "buttons": [{
                 "type": "web_url",
-                "url": "www.google.com",
+                "url": "http://www.aarz.pk/search?purpose=Sell&postedby=homepage&property_type=&locAreaOrKeyword="+row2_location",
                 "title": "Open Web URL"
             },
                     {
