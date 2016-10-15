@@ -83,11 +83,7 @@ def makeWebhookResult(data):
                 "url": "www.aarz.pk",
                 "title": "Open Web URL"
             }, 
-                    {
-                "type": "postback",
-                "title": "Call Postback",
-                "payload": "Payload for first bubble",
-            }],
+                   ],
           }, 
                    {
                 "title": row2_title,
@@ -99,11 +95,7 @@ def makeWebhookResult(data):
                 "url": "www.aarz.pk",
                 "title": "Open Web URL"
             },
-                    {
-                "type": "postback",
-                "title": "Call Postback",
-                "payload": "Payload for second bubble",
-            }]
+                   ]
           }]
         }
       }
