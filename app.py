@@ -31,11 +31,11 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
-    global city_name
-    city_name=processlocation(req)
-    global sector_name
-    sector_name=processSector(req)
-    baseurl = "https://fazendanatureza.com/bot/botarz.php"
+    global city_names
+    city_names=processlocation(req)
+    global sector_names
+    sector_names=processSector(req)
+    baseurl = "https://fazendanatureza.com/bot/botarz.php?city_name="+city_names+"sector_name="+sector_names
     result = urllib.urlopen(baseurl).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
@@ -54,19 +54,21 @@ def processSector(req):
     return sector
 
 def makeWebhookResult(data):
+    row1_id=data[0]['p_id']
     row1_title = data[0]['title']
-    row1_subtitle = data[0]['subtitle']
-    row1_img_url = data[0]['img_url']
+    row1_price = data[0]['price']
+    row1_location=data[0]['address']
     row1_web_url = data[0]['web_url']
     if row1_title is None:
         return {}
+    row2_id=data[1]['p_id']
     row2_title = data[1]['title']
-    row2_subtitle = data[1]['subtitle']
-    row2_img_url = data[1]['img_url']
+    row2_price = data[1]['price']
+    row2_location=data[1]['address']
     row2_web_url = data[1]['web_url']
     # print(json.dumps(item, indent=4))
 
-    speech = "This is the response from server... " +city_name+ "  " +sector_name +"    "+ row1_title + row1_subtitle + row1_img_url + row1_web_url+row2_title + row2_subtitle + row2_img_url + row2_web_url
+    speech = "This is the response from server... " +city_name+ "  " +sector_name +"    "+ row1_title +" "+row2_title
     print("Response:")
     print(speech)
     message= {
