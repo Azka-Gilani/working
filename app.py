@@ -64,7 +64,7 @@ def makeWebhookResult(data):
                "title": row1_title,
                "subtitle": row1_subtitle,
                "item_url": row1_web_url,               
-               "image_url": "https://drive.google.com/file/d/0B9Tf2uLxrt_td3hDQUtRak1CMHc/view" ,
+               "image_url": "https://fazendanatureza.com/bot/house-0.png" ,
                 "buttons": [{
                 "type": "web_url",
                 "url": row1_web_url,
@@ -80,7 +80,7 @@ def makeWebhookResult(data):
                 "title": row2_title,
                 "subtitle": row2_subtitle,
                 "item_url": row2_web_url,               
-                "image_url": row2_img_url,
+                "image_url": "https://fazendanatureza.com/bot/house2.png",
                 "buttons": [{
                 "type": "web_url",
                 "url": row2_web_url,
