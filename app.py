@@ -64,7 +64,7 @@ def makeWebhookResult(data):
                "title": row1_title,
                "subtitle": row1_subtitle,
                "item_url": row1_web_url,               
-               "image_url": row1_img_url ,
+               "image_url": "https://drive.google.com/file/d/0B9Tf2uLxrt_td3hDQUtRak1CMHc/view" ,
                 "buttons": [{
                 "type": "web_url",
                 "url": row1_web_url,
