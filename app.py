@@ -45,10 +45,14 @@ def makeWebhookResult(data):
     row1_web_url = data[0]['web_url']
     if row1_title is None:
         return {}
+    row2_title = data[1]['title']
+    row2_subtitle = data[1]['subtitle']
+    row2_img_url = data[1]['img_url']
+    row2_web_url = data[1]['web_url']
 
     # print(json.dumps(item, indent=4))
 
-    speech = "This is the response from server... " + row1_title + row1_subtitle + row1_img_url + row1_web_url
+    speech = "This is the response from server... " + row1_title + row1_subtitle + row1_img_url + row1_web_url+row2_title + row2_subtitle + row2_img_url + row2_web_url
     print("Response:")
     print(speech)
 
