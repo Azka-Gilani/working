@@ -55,11 +55,51 @@ def makeWebhookResult(data):
     speech = "This is the response from server... " + row1_title + row1_subtitle + row1_img_url + row1_web_url+row2_title + row2_subtitle + row2_img_url + row2_web_url
     print("Response:")
     print(speech)
+    message= {
+      "attachment": {
+         "type": "template",
+          "payload": {
+               "template_type": "generic",
+               "elements": [{
+               "title": row1_title,
+               "subtitle": row1_subtitle,
+               "item_url": row1_web_url,               
+               "image_url": row1_img_url ,
+                "buttons": [{
+                "type": "web_url",
+                "url": row1_web_url,
+                "title": "Open Web URL"
+            }, 
+                    {
+                "type": "postback",
+                "title": "Call Postback",
+                "payload": "Payload for first bubble",
+            }],
+          }, 
+                   {
+                "title": row2_title,
+                "subtitle": row2_subtitle,
+                "item_url": row2_web_url,               
+                "image_url": row2_img_url,
+                "buttons": [{
+                "type": "web_url",
+                "url": row2_web_url,
+                "title": "Open Web URL"
+            },
+                    {
+                "type": "postback",
+                "title": "Call Postback",
+                "payload": "Payload for second bubble",
+            }]
+          }]
+        }
+      }
+    }
 
     return {
         "speech": speech,
         "displayText": speech,
-        # "data": data,
+        "data": {"facebook": message},
         # "contextOut": [],
         #"source": "apiai-weather-webhook-sample"
     }
