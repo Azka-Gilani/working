@@ -31,8 +31,8 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
-    city_names="islamabad"
-    sector_names="g-11"
+    city_names=processlocation(req)
+    sector_names=processSector(req)
     baseurl = "https://fazendanatureza.com/bot/botarz.php?city_name="+city_names+"&sector_name="+sector_names
     result = urllib.urlopen(baseurl).read()
     data = json.loads(result)
