@@ -39,13 +39,16 @@ def processRequest(req):
 
 
 def makeWebhookResult(data):
-    row1 = data[0]['title']
-    if row1 is None:
+    row1_title = data[0]['title']
+    row1_subtitle = data[0]['subtitle']
+    row1_img_url = data[0]['img_url']
+    row1_web_url = data[0]['web_url']
+    if row1_title is None:
         return {}
 
     # print(json.dumps(item, indent=4))
 
-    speech = "This is the response from server... " + row1
+    speech = "This is the response from server... " + row1_title + row1_subtitle + row1_img_url + row1_web_url
     print("Response:")
     print(speech)
 
