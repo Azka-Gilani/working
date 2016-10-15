@@ -68,7 +68,7 @@ def makeWebhookResult(data):
     row2_web_url = data[1]['web_url']
     # print(json.dumps(item, indent=4))
 
-    speech = "This is the response from server... " +city_name+ "  " +sector_name +"    "+ row1_title +" "+row2_title
+    speech = "This is the response from server... "+city_names+"  "+sector_names+"    "+ row1_title +" "+row2_title
     print("Response:")
     print(speech)
     message= {
