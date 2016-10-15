@@ -35,7 +35,7 @@ def processRequest(req):
     city_names=processlocation(req)
     global sector_names
     sector_names=processSector(req)
-    baseurl = "https://fazendanatureza.com/bot/botarz.php?city_name="+city_names+"sector_name="+sector_names
+    baseurl = "https://fazendanatureza.com/bot/botarz.php?city_name="+city_names+"&sector_name="+sector_names
     result = urllib.urlopen(baseurl).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
