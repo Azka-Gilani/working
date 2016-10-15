@@ -56,16 +56,15 @@ def processSector(req):
 def makeWebhookResult(data):
     row1_id=data[0]['p_id']
     row1_title = data[0]['title']
-    row1_price = data[0]['price']
     row1_location=data[0]['address']
-    row1_web_url = data[0]['web_url']
+    row1_price = data[0]['price']
+    
     if row1_title is None:
         return {}
     row2_id=data[1]['p_id']
     row2_title = data[1]['title']
-    row2_price = data[1]['price']
     row2_location=data[1]['address']
-    row2_web_url = data[1]['web_url']
+    row2_price = data[1]['price']
     # print(json.dumps(item, indent=4))
 
     speech = "This is the response from server... "+city_names+"  "+sector_names+"    "+ row1_title +" "+row2_title
