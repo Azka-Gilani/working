@@ -96,7 +96,7 @@ def makeWebhookResult(data):
                 "image_url": "https://fazendanatureza.com/bot/house2.png",
                 "buttons": [{
                 "type": "web_url",
-                "url": "http://www.aarz.pk/search?purpose=Sell&postedby=homepage&property_type=&locAreaOrKeyword="+row2_location",
+                "url": "http://www.aarz.pk/search?purpose=Sell&postedby=homepage&property_type=&locAreaOrKeyword="+row2_location,
                 "title": "Open Web URL"
             },
                     {
