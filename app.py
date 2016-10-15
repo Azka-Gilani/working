@@ -39,13 +39,13 @@ def processRequest(req):
 
 
 def makeWebhookResult(data):
-    query = data.get('title')
-    if query is None:
+    row1 = data[0]['title']
+    if row1 is None:
         return {}
 
     # print(json.dumps(item, indent=4))
 
-    speech = "This is the response from server... " + query
+    speech = "This is the response from server... " + row1
     print("Response:")
     print(speech)
 
