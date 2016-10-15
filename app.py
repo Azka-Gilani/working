@@ -31,11 +31,19 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
+    global city1
+    city1=processlocation(req)
     baseurl = "https://fazendanatureza.com/bot/botarz.php"
     result = urllib.urlopen(baseurl).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
     return res
+
+def processlocation(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    city = parameters.get("city")
+    return city
 
 
 def makeWebhookResult(data):
@@ -49,10 +57,9 @@ def makeWebhookResult(data):
     row2_subtitle = data[1]['subtitle']
     row2_img_url = data[1]['img_url']
     row2_web_url = data[1]['web_url']
-
     # print(json.dumps(item, indent=4))
 
-    speech = "This is the response from server... " + row1_title + row1_subtitle + row1_img_url + row1_web_url+row2_title + row2_subtitle + row2_img_url + row2_web_url
+    speech = "This is the response from server... " +city1+ row1_title + row1_subtitle + row1_img_url + row1_web_url+row2_title + row2_subtitle + row2_img_url + row2_web_url
     print("Response:")
     print(speech)
     message= {
