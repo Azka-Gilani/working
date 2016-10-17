@@ -76,7 +76,7 @@ def makeWebhookResult(data):
                "elements": [{
                "title": row1_title,
                "subtitle": row1_location,
-               "item_url": "http://aarz.pk/search?purpose=Sell&postedby=homepage&property_type=&locAreaOrKeyword="+row1_location,               
+               "item_url": "http://www.aarz.pk/property-detail?id="+row1_id,               
                "image_url": "http://www.aarz.pk/assets/images/properties/"+row1_id+"/"+row1_id+".actual.1.jpg" ,
                 "buttons": [{
                 "type": "web_url",
@@ -88,7 +88,7 @@ def makeWebhookResult(data):
                    {
                 "title": row2_title,
                 "subtitle": row2_location,
-                "item_url":  "http://aarz.pk/search?purpose=Sell&postedby=homepage&property_type=&locAreaOrKeyword="+row2_location,               
+                "item_url":  "http://www.aarz.pk/property-detail?id="+row2_id,               
                 "image_url": "http://www.aarz.pk/assets/images/properties/"+row2_id+"/"+row2_id+".actual.1.jpg",
                 "buttons": [{
                 "type": "web_url",
