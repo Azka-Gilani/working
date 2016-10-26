@@ -33,13 +33,15 @@ def processRequest(req):
         return {}
     city_names=processlocation(req)
     sector_names=processSector(req)
+    property_type=processPropertyType(req)
     minimum_value=processMinimum(req)
     maximum_value=processMaximum(req)
     if minimum_value > maximum_value:
         minimum_value,maximum_value=maximum_value,minimum_value
     else:
         minimum_value,maximum_value=minimum_value,maximum_value
-    baseurl = "https://fazendanatureza.com/bot/botarz.php?city_name="+city_names+"&sector_name="+sector_names
+        
+    baseurl = "https://fazendanatureza.com/bot/botarz.php?city_name="+city_names+"&sector_name="+sector_names+"&minPrice="+minimum_value+"&maxPrice="+maximum_value+"&type="+property_type
     result = urllib.urlopen(baseurl).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
@@ -61,13 +63,20 @@ def processMinimum(req):
     result = req.get("result")
     parameters = result.get("parameters")
     minimum = parameters.get("number")
-    return sector
+    return minimum
 
 def processMaximum(req):
     result = req.get("result")
     parameters = result.get("parameters")
     maximum = parameters.get("number1")
     return maximum
+
+
+def processPropertyType(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    propertyType = parameters.get("PropertyType")
+    return propertyType
 
 def makeWebhookResult(data):
     row1_id=data[0]['p_id']
