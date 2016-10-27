@@ -89,10 +89,7 @@ def makeWebhookResult(data):
     row2_price = data[1]['price']
     
     # print(json.dumps(item, indent=4))
-    if row1_id is None:
-        speech = "There is no property matching your requirements Kinldy specify city, location and property type(House, Land, Commercial)."
-    else
-        speech = "This is the response from server."+ row1_title +" "+row2_title
+    speech = "This is the response from server."+ row1_title 
     print("Response:")
     print(speech)
     
