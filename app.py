@@ -83,7 +83,6 @@ def makeWebhookResult(data):
     row1_title = data[0]['title']
     row1_location=data[0]['address']
     row1_price = data[0]['price']
-    
     if row1_title is None:
         return {}
     row2_id=data[1]['p_id']
@@ -95,6 +94,8 @@ def makeWebhookResult(data):
     speech = "This is the response from server."+ row1_title +" "+row2_title
     print("Response:")
     print(speech)
+   :
+    
     message= {
       "attachment": {
          "type": "template",
