@@ -92,11 +92,16 @@ def makeWebhookResult(data):
     speech = "This is the response from server."+ row1_title 
     print("Response:")
     print(speech)
-    
-    message= {
-      "attachment": {
-         "type": "template",
-          "payload": {
+    if row1_id is None:
+        message=
+        {
+          "text":row1_title
+        }
+    else:
+        message= {
+         "attachment": {
+           "type": "template",
+             "payload": {
                "template_type": "generic",
                "elements": [{
                "title": row1_title,
