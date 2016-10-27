@@ -3,6 +3,7 @@
 import urllib
 import json
 import os
+import re
 
 from flask import Flask
 from flask import request
@@ -92,7 +93,8 @@ def makeWebhookResult(data):
     speech = "This is the response from server."+ row1_title 
     print("Response:")
     print(speech)
-    if row1_id is None:
+    Test_String="unable to find data"
+    if re.match(Test_string,row1_title):
         message=
         {
           "text":row1_title
