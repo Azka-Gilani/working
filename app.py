@@ -93,10 +93,8 @@ def makeWebhookResult(data):
     speech = "This is the response from server."+ row1_title 
     print("Response:")
     print(speech)
-    Test_String="unable to find data"
-    if re.match(Test_string,row1_title):
-        message=
-        {
+    if row1_title is "unable to find data":
+        message={
           "text":row1_title
         }
     else:
