@@ -93,10 +93,10 @@ def makeWebhookResult(data):
     speech = "This is the response from server."+ row1_title 
     print("Response:")
     print(speech)
-    if row1_title is "unable to find data":
+    if "unable" in row1_title:
         message={
-          "text":row1_title
-        }
+         "text":row1_title
+    }
     else:
         message= {
          "attachment": {
