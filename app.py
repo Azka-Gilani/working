@@ -83,26 +83,11 @@ def makeWebhookResult(data):
     row1_title = data[0]['title']
     row1_location=data[0]['address']
     row1_price = data[0]['price']
-    if row1_id is None:
-        return {}
-    if row1_title is None:
-        return {}
-    if row1_location is None:
-        return {}
-    if row1_price is None:
-        return {}
     row2_id=data[1]['p_id']
     row2_title = data[1]['title']
     row2_location=data[1]['address']
     row2_price = data[1]['price']
-    if row2_id is None:
-        return {}
-    if row2_title is None:
-        return {}
-    if row2_location is None:
-        return {}
-    if row2_price is None:
-        return {}
+    
     # print(json.dumps(item, indent=4))
     if row1_id is None:
         speech = "There is no property matching your requirements Kinldy specify city, location and property type(House, Land, Commercial)."
