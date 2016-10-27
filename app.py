@@ -94,7 +94,6 @@ def makeWebhookResult(data):
     speech = "This is the response from server."+ row1_title +" "+row2_title
     print("Response:")
     print(speech)
-   :
     
     message= {
       "attachment": {
