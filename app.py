@@ -110,7 +110,7 @@ def makeWebhookResult(data):
     row2_price = data[1]['price']
     
     # print(json.dumps(item, indent=4))
-    speech = "This is the response from server."+ row1_title +row2_title
+    speech = "This is the response from server."+ row1_title +"Location-1"+row1_location+"...."+row2_title +"Location-2"+row2_location
     print("Response:")
     print(speech)
     if "unable" in row1_title:
