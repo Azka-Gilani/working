@@ -40,6 +40,8 @@ def processRequest(req):
     minimum_value=processMinimum(req)
     maximum_value=processMaximum(req)
     latest=processLatestProperties(req)
+    if "1" in latest:
+        latest=1
     if minimum_value > maximum_value:
         minimum_value,maximum_value=maximum_value,minimum_value
     else:
