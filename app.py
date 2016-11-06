@@ -35,6 +35,8 @@ def processRequest(req):
     city_names=processlocation(req)
     sector_names=processSector(req)
     property_type=processPropertyType(req)
+    unit_property=processUnit(req)
+    area_property=processArea(req)
     minimum_value=processMinimum(req)
     maximum_value=processMaximum(req)
     latest=processLatestProperties(req)
@@ -42,7 +44,7 @@ def processRequest(req):
         minimum_value,maximum_value=maximum_value,minimum_value
     else:
         minimum_value,maximum_value=minimum_value,maximum_value    
-    baseurl = "https://fazendanatureza.com/bot/botarz.php?city_name="+city_names+"&sector_name="+sector_names+"&minPrice="+minimum_value+"&maxPrice="+maximum_value+"&type="+property_type+"&LatestProperties="+latest
+    baseurl = "https://fazendanatureza.com/bot/botarz.php?city_name="+city_names+"&sector_name="+sector_names+"&minPrice="+minimum_value+"&maxPrice="+maximum_value+"&type="+property_type+"&LatestProperties="+latest+"&UnitArea="+area_property+"&Unit="+unit_property
     result = urllib.urlopen(baseurl).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
@@ -84,6 +86,18 @@ def processLatestProperties(req):
     parameters = result.get("parameters")
     latest = parameters.get("LatestProperties")
     return latest
+
+def processUnit(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    unit = parameters.get("Unit")
+    return unit
+
+def processArea(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    area = parameters.get("AreaNumber")
+    return area
 
 def makeWebhookResult(data):
     row1_id=data[0]['p_id']
