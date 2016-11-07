@@ -204,7 +204,7 @@ def makeWebhookResult(data):
 
     return {
         "speech": speech,
-        "displayText": speech
+        "displayText": speech,
         "originalRequest":{"source":"facebook","data": {"facebook": message}}
         #"data": {"facebook": message},
         # "contextOut": [],
