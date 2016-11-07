@@ -39,6 +39,12 @@ def processRequest(req):
     area_property=processArea(req)
     NoOfDays=processDate(req)
     DateUnit=processDateUnit(req)
+    school=processSchool(req)
+    malls=processMalls(req)
+    transport=processTransport(req)
+    security=processSecurity(req)
+    airport=processAirport(req)
+    fuel=processFuel(req)
     minimum_value=processMinimum(req)
     maximum_value=processMaximum(req)
     latest=processLatestProperties(req)
@@ -46,7 +52,7 @@ def processRequest(req):
         minimum_value,maximum_value=maximum_value,minimum_value
     else:
         minimum_value,maximum_value=minimum_value,maximum_value    
-    baseurl = "https://fazendanatureza.com/bot/botarz.php?city_name="+city_names+"&sector_name="+sector_names+"&minPrice="+minimum_value+"&maxPrice="+maximum_value+"&type="+property_type+"&LatestProperties="+latest+"&UnitArea="+area_property+"&Unit="+unit_property
+    baseurl = "https://fazendanatureza.com/bot/botarz.php?city_name="+city_names+"&sector_name="+sector_names+"&minPrice="+minimum_value+"&maxPrice="+maximum_value+"&type="+property_type+"&LatestProperties="+latest+"&UnitArea="+area_property+"&Unit="+unit_property+"&school="+school+"&airport="+airport+"&transport="+transport+"&security="+security+"&shopping_mall="+malls+"&fuel="+fuel
     result = urllib.urlopen(baseurl).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
@@ -112,6 +118,42 @@ def processDateUnit(req):
     parameters = result.get("parameters")
     dayUnit = parameters.get("DayUnit")
     return dayUnit
+
+def processSchool(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    school = parameters.get("school")
+    return school
+
+def processMalls(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    malls = parameters.get("malls")
+    return malls
+
+def processTransport(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    transport = parameters.get("transport")
+    return transport
+
+def processSecurity(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    security = parameters.get("security")
+    return security
+
+def processAirport(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    airport = parameters.get("airport")
+    return airport
+
+def processFuel(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    fuel = parameters.get("fuelstation")
+    return fuel
 
 def makeWebhookResult(data):
     row1_id=data[0]['p_id']
