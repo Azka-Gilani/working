@@ -33,12 +33,24 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
+    global QR
     global intent_name
     intent_name=processIntentName(req)
-    if "ChooseCity" in intent_name:
-        global QR
-        QR[0]="something"
-        QR[1]="Trial"
+    if "ChooseCity" in intent_name:        
+        QR[0]="Select Location"
+        QR[1]="Property Type"
+        QR[2]="Hot Property"
+        QR[3]="Price Range"
+        QR[4]="Land Area"
+        QR[5]="Other City?Specify"
+    elif "ChooseSector" in intent_name:        
+        QR[0]="(Y)"
+        QR[1]="Property Type"
+        QR[2]="Hot Property"
+        QR[3]="Price Range"
+        QR[4]="Land Area"
+        QR[5]="Other Sector?Specify"
+        
     city_names=processlocation(req)
     sector_names=processSector(req)
     property_type=processPropertyType(req)
@@ -257,7 +269,42 @@ def makeWebhookResult(data):
                 "content_type":"text",
                 "title": QR[1],
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            }
+            },
+                 {
+                "content_type":"text",
+                "title": QR[2],
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            },
+                 {
+                "content_type":"text",
+                "title": QR[3],
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            },
+                 {
+                "content_type":"text",
+                "title": QR[4],
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            },
+                  {
+                "content_type":"text",
+                "title": QR[5],
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            },
+                 {
+                "content_type":"text",
+                "title": "Purchase plot,
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            },
+                 {
+                "content_type":"text",
+                "title": "Sell Plot",
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            },
+                 {
+                "content_type":"text",
+                "title": "Rent Plot",
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            },
         ]
     }
 
