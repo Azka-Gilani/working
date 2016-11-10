@@ -280,7 +280,7 @@ def makeWebhookResult(data):
             },
                  {
                 "content_type":"text",
-                "title": "Purchase plot,
+                "title": "Purchase plot",
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             },
                  {
