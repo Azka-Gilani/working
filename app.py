@@ -237,7 +237,12 @@ def makeWebhookResult(data):
              "quick_replies": [
             {
                 "content_type":"text",
-                "title": "Next Image",
+                "title": "Any Specific Location in this city?",
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            },
+                 {
+                "content_type":"text",
+                "title": "Wanna explore more cities?",
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             }
         ]
