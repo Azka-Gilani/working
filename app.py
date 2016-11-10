@@ -231,6 +231,18 @@ def makeWebhookResult(data):
             },
                    ]
           }]
+                  "quick_replies":[
+            {
+                "content_type":"text",
+                "title":"option1",
+                "payload":"option1payload"
+            },
+            {
+                "content_type":"text",
+                "title":"option2",
+                "payload":"option2payload"
+            }
+        ]
         }
       }
     }
