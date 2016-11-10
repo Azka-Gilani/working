@@ -205,19 +205,7 @@ def makeWebhookResult(data):
         message= {
          "attachment": {
            "type": "template",
-             "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Red",
-        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
-      },
-      {
-        "content_type":"text",
-        "title":"Green",
-        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
-      }
-    ],
-             "payload": {
+            "payload": {
                "template_type": "generic",
                "elements": [{
                "title": row_title[0],
@@ -245,7 +233,14 @@ def makeWebhookResult(data):
           }]
             
         }
-      }
+      },
+             "quick_replies": [
+            {
+                "content_type":"text",
+                "title": "Next Image",
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            }
+        ]
     }
 
     return {
