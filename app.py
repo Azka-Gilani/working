@@ -12,6 +12,7 @@ from flask import make_response
 # Flask app should start in global layout
 app = Flask(__name__)
 intent_name="string"
+QR=['0','1','2','3','4','5','6']
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -34,6 +35,10 @@ def processRequest(req):
         return {}
     global intent_name
     intent_name=processIntentName(req)
+    if "ChooseCity" in intent_name:
+        global QR
+        QR[0]="something"
+        QR[1]="Trial"
     city_names=processlocation(req)
     sector_names=processSector(req)
     property_type=processPropertyType(req)
@@ -245,12 +250,12 @@ def makeWebhookResult(data):
              "quick_replies": [
             {
                 "content_type":"text",
-                "title": "Specific Location?",
+                "title": QR[0],
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             },
                  {
                 "content_type":"text",
-                "title": "See more cities",
+                "title": QR[1],
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             }
         ]
