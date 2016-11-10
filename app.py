@@ -11,7 +11,7 @@ from flask import make_response
 
 # Flask app should start in global layout
 app = Flask(__name__)
-
+intent_name="string"
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -32,6 +32,8 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
+    global intent_name
+    intent_name=processIntentName(req)
     city_names=processlocation(req)
     sector_names=processSector(req)
     property_type=processPropertyType(req)
@@ -57,6 +59,12 @@ def processRequest(req):
     data = json.loads(result)
     res = makeWebhookResult(data)
     return res
+
+def processIntentName(req):
+    result = req.get("result")
+    parameters = result.get("metadata")
+    intent = parameters.get("intentName")
+    return intent
 
 def processlocation(req):
     result = req.get("result")
@@ -170,7 +178,7 @@ def makeWebhookResult(data):
         i+=1
     
     # print(json.dumps(item, indent=4))
-    speech = "This is the response from server."+ row_title[0] 
+    speech = "This is the response from server."+ row_title[0]+""+intent_name
     print("Response:")
     print(speech)
     if "unable" in row_title[0]:
