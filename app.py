@@ -42,7 +42,7 @@ def processRequest(req):
         QR[2]="Hot Property"
         QR[3]="Price Range"
         QR[4]="Land Area"
-        QR[5]="Other City?Specify"
+        QR[5]="City?Specify"
     
     city_names=processlocation(req)
     sector_names=processSector(req)
@@ -276,11 +276,6 @@ def makeWebhookResult(data):
                  {
                 "content_type":"text",
                 "title": QR[4],
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                  {
-                "content_type":"text",
-                "title": QR[5],
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             },
                  {
