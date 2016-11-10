@@ -304,7 +304,7 @@ def makeWebhookResult(data):
                 "content_type":"text",
                 "title": "Rent Plot",
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
+            }
         ]
     }
 
