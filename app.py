@@ -38,32 +38,46 @@ def processRequest(req):
     intent_name=processIntentName(req)
     if "ChooseCity" in intent_name:        
         QR[0]="Select Location"
-        QR[1]="Property Type"
+        QR[1]="Other City?Specify"
         QR[2]="Hot Property"
         QR[3]="Price Range"
         QR[4]="Land Area"
-        QR[5]="Other City?Specify"
+        QR[5]="Property Type"
     elif "ChooseSector" in intent_name:        
         QR[0]="(Y)"
-        QR[1]="Property Type"
+        QR[1]="Other Sector?Specify"
         QR[2]="Hot Property"
         QR[3]="Price Range"
         QR[4]="Land Area"
-        QR[5]="Other Sector?Specify"   
+        QR[5]="Property Type"   
     elif "ChangeType" in intent_name:        
         QR[0]="(Y)"
-        QR[1]="Change Location"
+        QR[1]="Other Type?Specify"
         QR[2]="Hot Property"
         QR[3]="Price Range"
         QR[4]="Land Area"
-        QR[5]="Other Type?Specify"  
+        QR[5]="Change Location"  
     elif "ChooseHotProperties" in intent_name:        
         QR[0]="(Y)"
         QR[1]="Change Location"
         QR[2]="Hot Property"
         QR[3]="Price Range"
         QR[4]="Land Area"
-        QR[5]="Change City"  
+        QR[5]="Change City" 
+    elif "ChoosePlotArea" in intent_name:        
+        QR[0]="(Y)"
+        QR[1]="Other Area?Specify"
+        QR[2]="Hot Property"
+        QR[3]="Price Range"
+        QR[4]="Land Area"
+        QR[5]="Change Location"
+    elif "DefinePriceRange" in intent_name:        
+        QR[0]="(Y)"
+        QR[1]="Other Range?Specify"
+        QR[2]="Hot Property"
+        QR[3]="Price Range"
+        QR[4]="Land Area"
+        QR[5]="Change Location"
     city_names=processlocation(req)
     sector_names=processSector(req)
     property_type=processPropertyType(req)
