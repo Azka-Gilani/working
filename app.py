@@ -354,6 +354,12 @@ def makeWebhookResult(data):
                 "title": QR[4],
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             },
+                 
+               {
+                "content_type":"location",
+                "title": "Properties near by",
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            },
                  {
                 "content_type":"text",
                 "title": "Purchase plot",
