@@ -237,7 +237,7 @@ def makeWebhookResult(data):
           }
         ]
       }
-    }
+    },
                       "quick_replies": [
             {
                 "content_type":"text",
