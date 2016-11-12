@@ -33,11 +33,13 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
+    global city_names
+    city_names=processlocation(req)
     global QR
     global intent_name
     intent_name=processIntentName(req)
     if "ChooseCity" in intent_name:        
-        QR[0]="Select Location"
+        QR[0]="Sector in"+city_names
         QR[1]="Other City?Specify"
         QR[2]="Hot Property"
         QR[3]="Price Range"
