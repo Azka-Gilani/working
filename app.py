@@ -229,7 +229,26 @@ def makeWebhookResult(data):
     print(speech)
     if "unable" in row_title[0]:
         message={
-         "text":row_title[0]
+         "text":row_title[0],
+         "quick_replies": [
+           
+                 {
+                "content_type":"text",
+                "title": "Purchase plot",
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            },
+                 {
+                "content_type":"text",
+                "title": "Sell Plot",
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            },
+                 {
+                "content_type":"text",
+                "title": "Rent Plot",
+                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
+            }
+        ]
+           
     }
     elif length==1:
                  message={
