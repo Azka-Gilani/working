@@ -39,7 +39,7 @@ def processRequest(req):
     global intent_name
     intent_name=processIntentName(req)
     if "ChooseCity" in intent_name:        
-        QR[0]="Sector in"+city_names
+        QR[0]="Sector in "+city_names
         QR[1]="Other City?Specify"
         QR[2]="Hot Property"
         QR[3]="Price Range"
