@@ -216,11 +216,13 @@ def makeWebhookResult(data):
     row_title=['test','test1','test2']
     row_location=['test','test1','test2']
     row_price=['test','test1','test2']
+    row_slug=['test','test1','test2']
     while (i <length):
         row_id[i]=data[i]['p_id']
         row_title[i]=data[i]['title']
         row_location[i]=data[i]['address']
-        row_price[i]=data[i]['address']
+        row_price[i]=data[i]['price']
+        row_slug[i]=data[i]['slug']
         i+=1
     
     # print(json.dumps(item, indent=4))
@@ -236,16 +238,6 @@ def makeWebhookResult(data):
                 "content_type":"text",
                 "title": "Purchase plot",
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": "Sell Plot",
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": "Rent Plot",
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             }
         ]
            
@@ -259,7 +251,7 @@ def makeWebhookResult(data):
             "elements":[
           {
              "title":row_title[0],
-             "item_url":"http://www.aarz.pk/property-detail?id="+row_id[0],
+             "item_url":"http://www.aarz.pk/property-detail/"+row_slug[0],
              "image_url":"http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg" ,
              "subtitle":row_location[0],
              "buttons":[
@@ -303,16 +295,6 @@ def makeWebhookResult(data):
                 "content_type":"text",
                 "title": "Purchase plot",
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": "Sell Plot",
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": "Rent Plot",
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             }
         ]
   }
@@ -325,8 +307,8 @@ def makeWebhookResult(data):
                "elements": [{
                "title": row_title[0],
                "subtitle": row_location[0],
-               "item_url": "http://www.aarz.pk/property-detail?id="+row_id[0],               
-               "image_url": "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg" ,
+               "item_url": "https://www.aarz.pk/property-detail/"+row_slug[0],               
+               "image_url": "https://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg" ,
                 "buttons": [{
                 "type": "web_url",
                 "url": "www.aarz.pk",
@@ -378,16 +360,6 @@ def makeWebhookResult(data):
                  {
                 "content_type":"text",
                 "title": "Purchase plot",
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": "Sell Plot",
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            },
-                 {
-                "content_type":"text",
-                "title": "Rent Plot",
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             }
         ]
