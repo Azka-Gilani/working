@@ -252,7 +252,7 @@ def makeWebhookResult(data):
           {
              "title":row_title[0],
              "item_url":"http://www.aarz.pk/property-detail/"+row_slug[0],
-             "image_url":"http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg" ,
+             "image_url":"http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg" ,
              "subtitle":row_location[0],
              "buttons":[
               {
@@ -308,7 +308,7 @@ def makeWebhookResult(data):
                "title": row_title[0],
                "subtitle": row_location[0],
                "item_url": "https://www.aarz.pk/property-detail/"+row_slug[0],               
-               "image_url": "https://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg" ,
+               "image_url": "https://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg" ,
                 "buttons": [{
                 "type": "web_url",
                 "url": "www.aarz.pk",
@@ -320,7 +320,7 @@ def makeWebhookResult(data):
                 "title": row_title[1],
                 "subtitle": row_location[1],
                 "item_url":  "http://www.aarz.pk/property-detail?id="+row_id[1],               
-                "image_url": "http://www.aarz.pk/assets/images/properties/"+row_id[1]+"/"+row_id[1]+".actual.1.jpg",
+                "image_url": "http://www.aarz.pk/assets/images/properties/"+row_id[1]+"/"+row_id[1]+".actual.0.jpg",
                 "buttons": [{
                 "type": "web_url",
                 "url": "www.aarz.pk",
