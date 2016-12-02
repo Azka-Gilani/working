@@ -82,6 +82,7 @@ def processRequest(req):
         QR[5]="Change Location"
     city_names=processlocation(req)
     sector_names=processSector(req)
+    sector_names1=processSector(req)
     property_type=processPropertyType(req)
     unit_property=processUnit(req)
     area_property=processArea(req)
@@ -100,7 +101,7 @@ def processRequest(req):
     #    minimum_value,maximum_value=maximum_value,minimum_value
     #else:
     # minimum_value,maximum_value=minimum_value,maximum_value    
-    baseurl = "https://aarz.pk/bot/index.php?city_name="+city_names+"&sector="+sector_names+"&sector_name="+sector_names+"&minPrice="+maximum_value+"&type="+property_type+"&LatestProperties="+latest+"&UnitArea="+area_property+"&Unit="+unit_property+"&school="+school+"&airport="+airport+"&transport="+transport+"&security="+security+"&shopping_mall="+malls+"&fuel="+fuel
+    baseurl = "https://aarz.pk/bot/index.php?city_name="+city_names+"&sector="+sector_names+"&sector_name="+sector_names1+"&minPrice="+maximum_value+"&type="+property_type+"&LatestProperties="+latest+"&UnitArea="+area_property+"&Unit="+unit_property+"&school="+school+"&airport="+airport+"&transport="+transport+"&security="+security+"&shopping_mall="+malls+"&fuel="+fuel
     result = urllib.urlopen(baseurl).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
