@@ -82,7 +82,6 @@ def processRequest(req):
         QR[5]="Change Location"
     city_names=processlocation(req)
     sector_names=processSector(req)
-    sector_names1=processSector(req)
     property_type=processPropertyType(req)
     unit_property=processUnit(req)
     area_property=processArea(req)
