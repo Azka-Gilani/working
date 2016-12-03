@@ -266,7 +266,7 @@ def makeWebhookResult(data):
              "buttons":[
               {
                "type":"web_url",
-               "url":"www.aarz.pk",
+               "url": "https://www.aarz.pk/property-detail/"+row_slug[0],  
                "title":"View Website"
               }             
             ]
@@ -320,7 +320,7 @@ def makeWebhookResult(data):
                "image_url": url ,
                 "buttons": [{
                 "type": "web_url",
-                "url": "www.aarz.pk",
+                "url":  "https://www.aarz.pk/property-detail/"+row_slug[0],  
                 "title": "Open Web URL"
             }, 
                    ],
@@ -332,7 +332,7 @@ def makeWebhookResult(data):
                 "image_url": "http://www.aarz.pk/assets/images/properties/"+row_id[1]+"/"+row_id[1]+".actual.0.jpg",
                 "buttons": [{
                 "type": "web_url",
-                "url": "www.aarz.pk",
+                "url":  "https://www.aarz.pk/property-detail/"+row_slug[1],  
                 "title": "Open Web URL"
             },
                    ]
