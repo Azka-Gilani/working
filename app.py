@@ -226,25 +226,13 @@ def makeWebhookResult(data):
         row_price[i]=data[i]['price']
         row_slug[i]=data[i]['slug']
         i+=1
-        url1 = "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg"
-        request = requests.get(url1)
-        if request.status_code == 200:
-            url1 = "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg"
-        else:
-            url1 = "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg"
+        
     global url
-    #global url2
     url = "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg"
-    #url2 = "http://www.aarz.pk/assets/images/properties/"+row_id[1]+"/"+row_id[1]+".actual.0.jpg"
     try:
         urllib2.urlopen(url)
     except urllib2.HTTPError, e:
         url= "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg"
-        
-    #try:
-     #   urllib2.urlopen(url2)
-    #except urllib2.HTTPError, e:
-     #   url2= "http://www.aarz.pk/assets/images/properties/"+row_id[1]+"/"+row_id[1]+".actual.1.jpg"
                 
     # print(json.dumps(item, indent=4))
     speech = "This is the response from server."+ row_title[0]+""+intent_name
