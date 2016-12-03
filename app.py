@@ -5,7 +5,7 @@ import urllib2
 import json
 import os
 import re
-import requests
+
 
 from flask import Flask
 from flask import request
