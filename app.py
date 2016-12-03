@@ -227,11 +227,11 @@ def makeWebhookResult(data):
         row_slug[i]=data[i]['slug']
         i+=1
         url1 = "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg"
-request = requests.get(url)
-if request.status_code == 200:
-    url1 = "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg"
-else:
-        url1 = "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg"
+        request = requests.get(url1)
+        if request.status_code == 200:
+            url1 = "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg"
+        else:
+            url1 = "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg"
    # global url1
     #global url2
     #url1 = "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg"
