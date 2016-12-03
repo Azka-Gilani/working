@@ -237,7 +237,7 @@ def makeWebhookResult(data):
     try:
         urllib2.urlopen(url2)
     except urllib2.HTTPError, e:
-        url2= "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg"
+        url2= "http://www.aarz.pk/assets/images/properties/"+row_id[1]+"/"+row_id[1]+".actual.1.jpg"
                 
     # print(json.dumps(item, indent=4))
     speech = "This is the response from server."+ row_title[0]+""+intent_name
