@@ -237,7 +237,7 @@ def makeWebhookResult(data):
     url = "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg"
     #url2 = "http://www.aarz.pk/assets/images/properties/"+row_id[1]+"/"+row_id[1]+".actual.0.jpg"
     try:
-        urllib2.urlopen(url1)
+        urllib2.urlopen(url)
     except urllib2.HTTPError, e:
         url= "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg"
         
