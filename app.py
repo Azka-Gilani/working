@@ -227,15 +227,7 @@ def makeWebhookResult(data):
         row_slug[i]=data[i]['slug']
         i+=1
         
-    global url
-    url = "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg"
-    try:
-        urllib2.urlopen(url)
-    except urllib2.HTTPError, e:
-        url= "http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.1.jpg"
-                
-    # print(json.dumps(item, indent=4))
-    speech = "This is the response from server."+ row_title[0]+""+intent_name
+    speech = "Here are some properties with your choice: "+"\n"+row_title[0] +" in "+ row_location[0] + " with price "+ row_price[0] +"\n"+ row_title[1] +" in "+ row_location[1] + " with price "+ row_price[1]
     print("Response:")
     print(speech)
     if "unable" in row_title[0]:
@@ -261,7 +253,7 @@ def makeWebhookResult(data):
           {
              "title":row_title[0],
              "item_url":"http://www.aarz.pk/property-detail/"+row_slug[0],
-             "image_url": url,
+             "image_url":"http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg",
              "subtitle":row_location[0],
              "buttons":[
               {
@@ -317,7 +309,7 @@ def makeWebhookResult(data):
                "title": row_title[0],
                "subtitle": row_location[0],
                "item_url": "https://www.aarz.pk/property-detail/"+row_slug[0],               
-               "image_url": url ,
+               "image_url":"http://www.aarz.pk/assets/images/properties/"+row_id[0]+"/"+row_id[0]+".actual.0.jpg" ,
                 "buttons": [{
                 "type": "web_url",
                 "url":  "https://www.aarz.pk/property-detail/"+row_slug[0],  
