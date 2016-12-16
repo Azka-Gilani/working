@@ -315,7 +315,13 @@ def makeWebhookResult(data):
                 "url":  "https://www.aarz.pk/property-detail/"+row_slug[0],  
                 "title": "Open Web URL"
             }, 
-                   ],
+                 {
+                "type":"element_share"
+                  }   
+                   ]
+                   
+                           
+              
           }, 
                    {
                 "title": row_title[1],
