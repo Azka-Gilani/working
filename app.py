@@ -396,7 +396,7 @@ def makeWebhookResult(data):
         ]
     }
     else:
-                message= {
+        message= {
          "attachment": {
            "type": "template",
             "payload": {
