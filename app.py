@@ -226,7 +226,7 @@ def makeWebhookResult(data):
         row_location[i]=data[i]['address']
         row_price[i]=data[i]['price']
         row_slug[i]=data[i]['slug']
-        row_number[i]=data[i]['phone_number']
+        row_number[i]=data[i]['mobile_number']
         i+=1
         
     speech = "Here are some properties with your choice: "+"\n"+row_number[0]+"   "+row_title[0] +" in "+ row_location[0] + " with price "+ row_price[0] +"\n"+ row_title[1] +" in "+ row_location[1] + " with price "+ row_price[1]
