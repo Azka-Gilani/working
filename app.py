@@ -310,7 +310,7 @@ def makeWebhookResult(data):
             }
         ]
   }
-    else:
+    elif length==2:
         message= {
          "attachment": {
            "type": "template",
