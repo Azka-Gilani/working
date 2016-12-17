@@ -237,7 +237,7 @@ def makeWebhookResult(data):
            
                  {
                 "content_type":"text",
-                "title": "Purchase plot",
+                "title": "Buy Property",
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             }
         ]
@@ -302,7 +302,7 @@ def makeWebhookResult(data):
             },
                  {
                 "content_type":"text",
-                "title": "Purchase Property",
+                "title": "Buy Property",
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             }
         ]
@@ -382,7 +382,7 @@ def makeWebhookResult(data):
             },
                  {
                 "content_type":"text",
-                "title": "Purchase Property",
+                "title": "Buy Property",
                 "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
             }
         ]
