@@ -214,12 +214,12 @@ def processFuel(req):
 def makeWebhookResult(data):
     i=0
     length=len(data)
-    row_id=['test','test1','test2']
-    row_title=['test','test1','test2']
-    row_location=['test','test1','test2']
-    row_price=['test','test1','test2']
-    row_slug=['test','test1','test2']
-    row_number=['test','test1','test2']
+    row_id=['test','test1','test2','test3','test4']
+    row_title=['test','test1','test2','test3','test4']
+    row_location=['test','test1','test2','test3','test4']
+    row_price=['test','test1','test2','test3','test4']
+    row_slug=['test','test1','test2','test3','test4']
+    row_number=['test','test1','test2','test3','test4']
     while (i <length):
         row_id[i]=data[i]['p_id']
         row_title[i]=data[i]['title']
@@ -269,7 +269,7 @@ def makeWebhookResult(data):
                   {
               "type":"phone_number",
               "title":"Call Agent",
-                  "payload":"799"
+                  "payload":row_number[0]
                   
        }
             ]
@@ -332,7 +332,7 @@ def makeWebhookResult(data):
                     {
               "type":"phone_number",
               "title":"Call Agent",
-                  "payload":"678"
+                  "payload":row_number[0]
        }
                    ]
                    
@@ -355,7 +355,7 @@ def makeWebhookResult(data):
                  {
               "type":"phone_number",
               "title":"Call Agent",
-                  "payload":"789"
+                  "payload":row_number[1]
        }
                    ]
           }]
